@@ -6,7 +6,7 @@ async function handleGenerateNewShortURL(req, res) {
     Id=  req.body.cutomisedId.trim();
     console.log(req.body.cutomisedId);
   } else {
-     Id = shortId.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@').trim().toLowerCase();
+     Id = shortId().trim();
   }
   let redirectUrl;
   if (req.body.url.includes("https")) redirectUrl = req.body.url;
