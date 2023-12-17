@@ -8,8 +8,9 @@ async function handlePostUserSignUp(req, res) {
     email,
     password,
   });
-  console.log(entry);
-  return res.redirect("/");
+  // console.log(entry);
+  const token = setUser(entry);
+  return res.cookie("uid", token).redirect("/");
 }
 
 async function handlePostUserLogin(req, res) {
@@ -20,7 +21,6 @@ async function handlePostUserLogin(req, res) {
   });
   if (!entry) return res.render("login", {error:"Error: Incorrect Email or Password "});
   const token = setUser(entry);
-  res.cookie("uid", token);
-  return res.redirect("/");
+  return res.cookie("uid", token).redirect("/");
 }
 module.exports = { handlePostUserSignUp, handlePostUserLogin };
