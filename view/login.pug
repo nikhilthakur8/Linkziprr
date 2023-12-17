@@ -1,0 +1,12 @@
+
+extends base 
+block content 
+    .container.mt-4
+        form(method="post" action="/user/login")
+            .mb-3
+                label.form-label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' name ="email" required)
+            .mb-3
+                label.form-label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password' name ="password" required)
+            button.btn.btn-primary(type='submit') Submit
