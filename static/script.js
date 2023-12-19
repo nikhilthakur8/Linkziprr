@@ -2,7 +2,7 @@ const allmyLink = document.getElementsByClassName("clipboardButton");
 Array.from(allmyLink).forEach((button) => {
   button.addEventListener("click", (e) => {
     const shortId = button.parentElement.parentElement.children[1].innerHTML;
-    const copyText = `shortify-project.vercel.app/url/${shortId.trim()}`;
+    const copyText = `linkziprr.vercel.app/url/${shortId.trim()}`;
     navigator.clipboard.writeText(copyText);
     button.classList.add("active");
     setTimeout(() => {
@@ -20,7 +20,7 @@ const allMyDelete = document.getElementsByClassName("deleteButton");
 Array.from(allMyDelete).forEach((button) => {
   button.addEventListener("click", () => {
     const shortId = button.parentElement.parentElement.children[1].innerHTML;
-    fetch(`https://shortify-project.vercel.app/url/delete/${shortId.trim()}`, {
+    fetch(`https://linkziprr.vercel.app/url/delete/${shortId.trim()}`, {
       method: 'DELETE',
       mode: 'cors', // Include this line to enable CORS
       headers: {

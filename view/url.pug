@@ -10,13 +10,13 @@ block content
             form(action="/" method="post") 
                 .input-group.mb-3
                     label.input-group-text#inputGroup-sizing-default.bg-info(for="inputURL") Paste URL
-                    input.form-control#inputURL(type='text' placeholder="Example: https://www.example.com" name="url" aria-describedby='button-addon2' required )
+                    input.form-control#inputURL(type='text' placeholder="https://www.example.com" name="url" aria-describedby='button-addon2' required )
                     //- button#button-addon2.btn.btn-primary(type='submit' onclick()="copyToClipBoard") Generate
                 .mb-3
                     label.form-label(for='basic-url') Customised URL (Optional)
                     .input-group
-                        span#basic-addon3.text-secondary-emphasis.input-group-text.bg-info shortify-project.vercel.app/
-                        input#basic-url.form-control(type='text',placeholder="Example: favourite-Link" aria-describedby='basic-addon3 basic-addon4', name = "cutomisedId")
+                        span#basic-addon3.text-secondary-emphasis.input-group-text.bg-info linkziprr.vercel.app/
+                        input#basic-url.form-control(type='text',placeholder="favourite-Link" aria-describedby='basic-addon3 basic-addon4', name = "cutomisedId")
                         button#button-addon2.btn.btn-primary(type='submit' onclick()="copyToClipBoard") Generate
                    
 
