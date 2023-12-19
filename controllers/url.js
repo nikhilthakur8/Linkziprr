@@ -1,12 +1,13 @@
-const nanoid = require("nanoid");
+const shortId = require("shortid");
 const url = require("../models/url.js");
 async function handleGenerateNewShortURL(req, res) {
+  shortId.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
   let Id;
   if (req.body?.cutomisedId) {
     Id=  req.body.cutomisedId.trim();
     console.log(req.body.cutomisedId);
   } else {
-     Id = nanoid.nanoid(6);
+     Id =shortId.generate().slice(0,6);
   }
   let redirectUrl;
   if (req.body.url.includes("https")) redirectUrl = req.body.url;
