@@ -21,16 +21,16 @@ html(lang="en")
             ul.navbar-nav
               if !user
                 li.nav-item
-                  a.nav-link.active(aria-current='page', href='/signup') Create Account
+                  a.nav-link.active(aria-current='page', href='/user/signup') Create Account
                 li.nav-item
-                  a.nav-link.active(aria-current='page', href='/login') Login 
+                  a.nav-link.active(aria-current='page', href='/user/login') Login 
               if user 
                 li.nav-item.dropdown
                   a.nav-link.dropdown-toggle.active(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
                     | #{user.name}
                   ul.dropdown-menu
                     li
-                      a.dropdown-item(href='/logout') Log Out
+                      a.dropdown-item(href='/user/logout') Log Out
     if error
       .container.mt-3 
         .alert.alert-danger(role='alert')
