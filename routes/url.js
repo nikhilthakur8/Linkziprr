@@ -7,8 +7,6 @@ const {
 const url = require("../models/url");
 
 
-app.route("/:id")
-.get(handleURL);
 
 app.delete("/delete/:id",async (req,res)=>{
   const shortId = req.params.id;

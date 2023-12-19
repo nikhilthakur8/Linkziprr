@@ -2,7 +2,7 @@ const allmyLink = document.getElementsByClassName("clipboardButton");
 Array.from(allmyLink).forEach((button) => {
   button.addEventListener("click", (e) => {
     const shortId = button.parentElement.parentElement.children[1].innerHTML;
-    const copyText = `linkziprr.vercel.app/url/${shortId.trim()}`;
+    const copyText = `linkziprr.vercel.app/${shortId.trim()}`;
     navigator.clipboard.writeText(copyText);
     button.classList.add("active");
     setTimeout(() => {
