@@ -1,4 +1,4 @@
-const shortId = require("shortid");
+const nanoid = require("nanoid");
 const url = require("../models/url.js");
 async function handleGenerateNewShortURL(req, res) {
   let Id;
@@ -6,7 +6,7 @@ async function handleGenerateNewShortURL(req, res) {
     Id=  req.body.cutomisedId.trim();
     console.log(req.body.cutomisedId);
   } else {
-     Id = shortId().trim();
+     Id = nanoid.nanoid(6);
   }
   let redirectUrl;
   if (req.body.url.includes("https")) redirectUrl = req.body.url;

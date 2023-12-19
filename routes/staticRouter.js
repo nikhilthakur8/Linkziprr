@@ -9,7 +9,7 @@ const {
 } = require("../controllers/url");
 const { restrictTo } = require("../middleware/auth");
 
-app.route("/:id").get(handleURL);
+staticRouter.route("/:id").get(handleURL);
 
 staticRouter.get("/admin/url", restrictTo(["ADMIN"]), async (req, res) => {
   const allURL = await url.find({}).sort({ createdAt: -1 });
