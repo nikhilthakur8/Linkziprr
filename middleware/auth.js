@@ -27,7 +27,7 @@ function checkForAuthentication(req, res, next) {
 // }
 function restrictTo(role) {
   return function (req, res, next) {
-    if (!req.user) return res.redirect("/login");
+    if (!req.user) return res.redirect("user/login");
     if (!role.includes(req.user.role))
       return res.send(`<h1 style="font-size:50px;color:#cc0000">You have not authorisation to access this route<h1>`);
     next();

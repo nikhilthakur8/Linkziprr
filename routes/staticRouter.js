@@ -8,8 +8,8 @@ const {
   handleGetUrl,
 } = require("../controllers/url");
 
-const { restrictTo } = require("../middleware/auth");
 
+const { restrictTo } = require("../middleware/auth");
 staticRouter.route("/:id").get(handleURL);
 
 staticRouter.get("/admin/url", restrictTo(["ADMIN"]), async (req, res) => {
@@ -20,5 +20,8 @@ staticRouter
   .route("/")
   .get(restrictTo(["NORMAL", "ADMIN"]), handleGetUrl)
   .post(handleGenerateNewShortURL);
+staticRouter.get("/app/about",(req,res)=>{
+  res.render("about-us.pug");
+})
 
 module.exports = staticRouter;
